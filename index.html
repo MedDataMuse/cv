@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographie: Tendances en Biostatistiques & Science des Données - S. Azonaha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Plan narratif et structure :
+        1. Introduction/Accroche - "Le Professionnel de la Santé Axé sur les Données"
+           - Chiffre clé : Années d'expérience.
+           - Texte d'introduction.
+        2. Expertise Fondamentale & Compétences - "Naviguer dans le Paysage des Données"
+           - Graphique à barres : Compétences clés.
+           - Texte explicatif.
+        3. Maîtrise Technique - "Les Outils du Métier"
+           - Graphique en anneau : Maîtrise des outils.
+           - Texte explicatif.
+        4. Trajectoire d'Expérience - "Un Voyage à travers l'Application des Données"
+           - Chronologie (HTML/CSS) : Rôles clés.
+           - Texte explicatif.
+        5. Fondation Éducative - "Les Piliers de l'Expertise"
+           - Liste (HTML/CSS) : Qualifications majeures.
+           - Texte explicatif.
+        6. Orientation Future & Intérêts - "Innover pour la Santé de Demain"
+           - Graphique à bulles : Domaines d'intérêt.
+           - Texte explicatif.
+        7. Compétences Linguistiques - "Communication Globale"
+           - Graphique à barres simple : Niveaux de langue.
+           - Texte explicatif.
+        8. Conclusion - "Faire Progresser la Santé grâce aux Données"
+           - Récapitulatif et vision d'avenir.
+
+        Choix des visualisations (Confirmation SANS SVG, SANS Mermaid JS) :
+        - Section 1: Chiffre clé -> Informer -> Grand texte HTML. (SANS SVG)
+        - Section 2: Compétences clés -> Comparer -> Graphique à barres Chart.js (Canvas). (SANS SVG)
+        - Section 3: Maîtrise des outils -> Comparer (composition) -> Graphique en anneau Chart.js (Canvas). (SANS SVG)
+        - Section 4: Rôles professionnels -> Changer/Organiser -> Chronologie HTML/CSS Tailwind. (SANS SVG, SANS MERMAID JS)
+        - Section 5: Qualifications -> Organiser -> Liste HTML. (SANS SVG)
+        - Section 6: Domaines d'intérêt -> Comparer -> Graphique à bulles Chart.js (Canvas). (SANS SVG)
+        - Section 7: Compétences linguistiques -> Comparer -> Graphique à barres simple Chart.js (Canvas). (SANS SVG)
+        
+        Palette de couleurs choisie : "Energetic & Playful"
+        - Primaire: #FF6B6B (Corail Rouge)
+        - Secondaire: #FFD166 (Jaune Soleil)
+        - Accent 1: #06D6A0 (Vert Turquoise)
+        - Accent 2: #118AB2 (Bleu Céruléen Profond)
+        - Neutre/Fond: #F7F7F7 (Gris Clair), Texte: #333333 (Gris Foncé)
+
+        Confirmation : NI Mermaid JS NI SVG n'ont été utilisés dans cette sortie.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F7F7; /* Neutre/Fond */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-left: 2px solid #118AB2; /* Accent 2 */
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0.25rem;
+            height: 1rem;
+            width: 1rem;
+            background-color: #FF6B6B; /* Primaire */
+            border-radius: 9999px;
+            border: 2px solid white;
+        }
+        h1, h2, h3 { color: #118AB2; /* Accent 2 */ }
+        .stat-number { color: #FF6B6B; /* Primaire */ }
+        .text-muted { color: #555555; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#118AB2] text-white p-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-white">Infographie: Tendances en Biostatistiques & Science des Données</h1>
+            <p class="text-lg text-[#FFD166]">Basée sur le profil de Sehomi Azonaha</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="intro" class="section-card text-center">
+            <h2 class="text-2xl font-semibold mb-4">Le Professionnel de la Santé Axé sur les Données</h2>
+            <p class="text-6xl font-bold stat-number mb-4">20+ <span class="text-3xl">ans</span></p>
+            <p class="text-lg text-muted mb-2">d'expérience combinée dans le secteur de la santé, avec une spécialisation pointue et croissante en biostatistiques et science des données.</p>
+            <p class="text-md text-gray-700">
+                Ce profil illustre une tendance clé du marché : la demande croissante pour des experts capables de traduire des données de santé complexes en informations exploitables. L'expertise en modélisation prédictive et en consultation méthodologique est cruciale pour orienter la recherche clinique et épidémiologique vers des décisions stratégiques et des initiatives concrètes.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="skills" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Naviguer dans le Paysage des Données</h2>
+                <p class="text-sm text-muted mb-4 text-center">Les compétences multidisciplinaires sont essentielles pour extraire de la valeur des données de santé. Ce graphique illustre la répartition des domaines d'expertise clés.</p>
+                <div class="chart-container h-[350px] md:h-[400px]">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">
+                    Une solide maîtrise de la conception d'études, de l'analyse de données avancée, et des outils statistiques modernes (comme R et Python) forme le socle de cette expertise. La capacité à communiquer et vulgariser des résultats complexes est également une compétence de plus en plus recherchée.
+                </p>
+            </section>
+
+            <section id="tools" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Les Outils du Métier</h2>
+                <p class="text-sm text-muted mb-4 text-center">La maîtrise d'un arsenal technique varié est un indicateur de l'adaptabilité et de la profondeur technique d'un data scientist en santé.</p>
+                <div class="chart-container h-[350px] md:h-[400px]">
+                    <canvas id="toolsChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">
+                    La prédominance de R/RShiny et Python souligne l'alignement avec les standards de l'industrie pour l'analyse statistique et le machine learning. La compétence en SQL est fondamentale pour la gestion des données.
+                </p>
+            </section>
+        </div>
+
+        <section id="experience" class="section-card md:col-span-2">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Un Voyage à travers l'Application des Données</h2>
+            <p class="text-sm text-muted mb-6 text-center">L'évolution de carrière reflète souvent l'acquisition progressive de compétences spécialisées et l'adaptation aux besoins changeants du secteur de la santé.</p>
+            <div class="relative">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-semibold text-[#FF6B6B]">Infirmière Diplômée d'État <span class="text-sm font-normal text-gray-500">(2004 - 2020)</span></h3>
+                    <p class="text-sm text-gray-600">Expériences diversifiées en santé publique (France, Nouvelle-Calédonie, Nigéria), incluant l'éducation thérapeutique, la santé scolaire et communautaire. Cette phase a construit une compréhension profonde des enjeux de terrain en santé.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-semibold text-[#FF6B6B]">Biostatisticienne Spécialisée <span class="text-sm font-normal text-gray-500">(Oct. 2023 - Actuel)</span></h3>
+                    <p class="text-sm text-gray-600">Hôpital Robert Debré, Paris. Application directe des compétences en analyse de données de santé, consultations statistiques pour la recherche, et développement de modèles prédictifs. Marque une spécialisation pointue vers la valorisation des données cliniques.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-lg font-semibold text-[#FF6B6B]">Vacataire d'Enseignement en Épidémiologie <span class="text-sm font-normal text-gray-500">(Oct. 2024 - Actuel)</span></h3>
+                    <p class="text-sm text-gray-600">Université Sorbonne Paris Nord. Transmission des connaissances en épidémiologie et méthodologies de recherche, contribuant à la formation de la prochaine génération de professionnels de santé.</p>
+                </div>
+            </div>
+             <p class="mt-6 text-sm text-gray-600">
+                Cette trajectoire illustre une transition d'une pratique clinique directe vers un rôle hautement spécialisé dans l'analyse de données et la recherche, une tendance observée chez de nombreux professionnels cherchant à maximiser leur impact grâce à la data science.
+            </p>
+        </section>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="education" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Les Piliers de l'Expertise</h2>
+                <p class="text-sm text-muted mb-4 text-center">Une formation académique solide et continue est le fondement des compétences en biostatistiques et data science.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-[#06D6A0] mr-2 text-xl">🎓</span>
+                        <div>
+                            <h3 class="font-semibold">Master 2 Méthodologie et statistiques en recherche biomédicale</h3>
+                            <p class="text-xs text-gray-500">Université Paris-Saclay (2022 - 2023)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#06D6A0] mr-2 text-xl">🎓</span>
+                        <div>
+                            <h3 class="font-semibold">Master 1 et 2 Nutrition humaine et santé publique</h3>
+                            <p class="text-xs text-gray-500">Université Sorbonne Paris Nord (2019 - 2021)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#06D6A0] mr-2 text-xl">🎓</span>
+                        <div>
+                            <h3 class="font-semibold">DIU Acteurs relais de la prévention</h3>
+                            <p class="text-xs text-gray-500">Université Sorbonne Paris Nord (2017)</p>
+                        </div>
+                    </li>
+                     <li class="flex items-start">
+                        <span class="text-[#06D6A0] mr-2 text-xl">🎓</span>
+                        <div>
+                            <h3 class="font-semibold">Diplôme d'État en soins infirmiers</h3>
+                            <p class="text-xs text-gray-500">IFSI Simone Veil, Rouen (2001 - 2004)</p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="mt-4 text-sm text-gray-600">
+                    La combinaison de masters spécialisés en statistiques biomédicales et en santé publique offre une perspective unique, alliant rigueur méthodologique et compréhension des enjeux de santé populationnelle.
+                </p>
+            </section>
+
+            <section id="interests" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Innover pour la Santé de Demain</h2>
+                 <p class="text-sm text-muted mb-4 text-center">Les centres d'intérêt prospectifs indiquent une veille active sur les technologies émergentes et leur potentiel de transformation du secteur de la santé.</p>
+                <div class="chart-container h-[350px] md:h-[400px]">
+                    <canvas id="interestsChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">
+                    L'intérêt pour la blockchain, l'IA, l'automatisation et les énergies renouvelables appliquées à la santé suggère une vision tournée vers des solutions innovantes et durables, des domaines en forte croissance et demandeurs d'expertise data.
+                </p>
+            </section>
+        </div>
+        
+        <section id="languages" class="section-card md:col-span-2">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Communication Globale</h2>
+            <p class="text-sm text-muted mb-4 text-center">Dans un monde de la recherche et de la santé de plus en plus interconnecté, la maîtrise de plusieurs langues est un atout majeur.</p>
+            <div class="chart-container h-[300px] md:h-[350px]">
+                <canvas id="languagesChart"></canvas>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">
+                La maîtrise du français et de l'anglais à un niveau courant, complétée par des notions d'espagnol, facilite la collaboration internationale, l'accès à une littérature scientifique plus large et la diffusion des résultats de recherche.
+            </p>
+        </section>
+
+        <footer class="text-center py-8">
+            <h2 class="text-2xl font-semibold mb-3">Faire Progresser la Santé grâce aux Données</h2>
+            <p class="text-md text-gray-700 max-w-2xl mx-auto">
+                Ce profil type démontre l'importance croissante des compétences en science des données pour relever les défis complexes du secteur de la santé. L'aptitude à analyser, interpréter et communiquer des informations issues de données massives est devenue indispensable pour l'innovation thérapeutique, l'amélioration des systèmes de soins et la recherche épidémiologique.
+            </p>
+            <p class="text-xs text-gray-500 mt-6">Infographie générée le <span id="generationDate"></span>. Inspirée par le profil de Sehomi Azonaha.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.getElementById('generationDate').textContent = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#333333',
+                        font: { size: 12 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    titleFont: { size: 14 },
+                    bodyFont: { size: 12 },
+                    padding: 10
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#333333', font: { size: 10 } },
+                    grid: { display: false }
+                },
+                y: {
+                    ticks: { color: '#333333', font: { size: 10 } },
+                    grid: { color: '#e0e0e0', drawBorder: false }
+                }
+            }
+        };
+        
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        };
+
+        const skillsData = {
+            labels: [
+                wrapLabel('Conception Études Épidémiologiques'), 
+                wrapLabel('Analyse Données Complexes'), 
+                wrapLabel('Maîtrise Outils Stats (R, Python)'), 
+                wrapLabel('Pédagogie & Vulgarisation'), 
+                wrapLabel('Innovation & Automatisation')
+            ],
+            datasets: [{
+                label: 'Niveau d\'Expertise (Illustratif)',
+                data: [90, 95, 85, 80, 75],
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#FF8C42'],
+                borderColor: '#ffffff',
+                borderWidth: 2,
+                borderRadius: 5
+            }]
+        };
+        new Chart(document.getElementById('skillsChart'), {
+            type: 'bar',
+            data: skillsData,
+            options: { ...commonChartOptions }
+        });
+
+        const toolsData = {
+            labels: ['R/RShiny', 'Python', 'SQL', 'Autres (Visualisation, Gestion)'],
+            datasets: [{
+                label: 'Maîtrise des Outils',
+                data: [40, 35, 15, 10],
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2'],
+                borderColor: '#ffffff',
+                borderWidth: 2,
+                hoverOffset: 4
+            }]
+        };
+        new Chart(document.getElementById('toolsChart'), {
+            type: 'doughnut',
+            data: toolsData,
+            options: { 
+                ...commonChartOptions,
+                cutout: '60%',
+                scales: { x: { display: false }, y: { display: false } } 
+            }
+        });
+
+        const interestsData = {
+            datasets: [{
+                label: 'Domaines d\'Intérêt Prospectifs',
+                data: [
+                    { x: 10, y: 15, r: 25, label: 'Blockchain & IA en Santé' },
+                    { x: 15, y: 10, r: 20, label: 'Automatisation Processus (IA)' },
+                    { x: 20, y: 18, r: 15, label: 'Développement Web (Web3)' },
+                    { x: 25, y: 12, r: 18, label: 'Énergie Solaire & Santé Durable' }
+                ],
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2'],
+                 borderColor: '#ffffff',
+                borderWidth: 1,
+            }]
+        };
+        new Chart(document.getElementById('interestsChart'), {
+            type: 'bubble',
+            data: interestsData,
+            options: {
+                ...commonChartOptions,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let dataPoint = context.dataset.data[context.dataIndex];
+                                return dataPoint.label + ': ' + dataPoint.r;
+                            },
+                            title: () => null 
+                        }
+                    }
+                },
+                scales: {
+                    x: { display: false, min: 0, max: 35 },
+                    y: { display: false, min: 0, max: 25 }
+                }
+            }
+        });
+        
+        const languagesData = {
+            labels: ['Français', 'Anglais', 'Espagnol'],
+            datasets: [{
+                label: 'Niveau de Maîtrise',
+                data: [100, 90, 60], // Maternelle, Courant, B1 (illustratif)
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0'],
+                borderColor: '#ffffff',
+                borderWidth: 2,
+                borderRadius: 5,
+                barPercentage: 0.6
+            }]
+        };
+        new Chart(document.getElementById('languagesChart'), {
+            type: 'bar',
+            data: languagesData,
+            options: {
+                 ...commonChartOptions,
+                 indexAxis: 'y',
+                 scales: {
+                    x: { max: 100, ticks: { stepSize: 20 } },
+                    y: { ticks: { font: { size: 12 } } }
+                 },
+                 plugins: { legend: { display: false } }
+            }
+        });
+
+    </script>
+</body>
+</html>
